@@ -1,3 +1,9 @@
+// Reference the DOM elements
+const patternSelect = document.getElementById('pattern-select');
+const colorSchemeSelect = document.getElementById('color-scheme-select');
+const generateButton = document.getElementById('generate-button');
+const patternCanvas = document.getElementById('pattern-canvas');
+
 function initPatternOptions() {
   const patterns = [
       { value: 'm90', label: 'Swedish Army M90' },
@@ -82,3 +88,8 @@ function drawPolygon(ctx, x, y, corners, size, color) {
   ctx.fillStyle = color;
   ctx.fill();
 }
+
+// Call the init functions and add a click event listener to the generate button
+initPatternOptions();
+initColorSchemeOptions();
+generateButton.addEventListener('click', generatePattern);
