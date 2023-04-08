@@ -1,8 +1,39 @@
-// Other code ...
+function initPatternOptions() {
+  const patterns = [
+      { value: 'm90', label: 'Swedish Army M90' },
+      // Add more pattern options here
+  ];
+
+  patterns.forEach(pattern => {
+      const option = document.createElement('option');
+      option.value = pattern.value;
+      option.textContent = pattern.label;
+      patternSelect.appendChild(option);
+  });
+}
+
+function initColorSchemeOptions() {
+  const colorSchemes = [
+      { value: 'standard', label: 'Standard' },
+      { value: 'desert', label: 'Desert' },
+      { value: 'forest', label: 'Forest' },
+      { value: 'urban', label: 'Urban' },
+      { value: 'snow', label: 'Snow' },
+      { value: 'jungle', label: 'Jungle' },
+      // Add more color scheme options here
+  ];
+
+  colorSchemes.forEach(colorScheme => {
+      const option = document.createElement('option');
+      option.value = colorScheme.value;
+      option.textContent = colorScheme.label;
+      colorSchemeSelect.appendChild(option);
+  });
+}
 
 function generatePattern() {
   // ...
-  
+
   // Set the canvas size
   patternCanvas.width = patternCanvas.clientWidth;
   patternCanvas.height = patternCanvas.clientHeight;
